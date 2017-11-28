@@ -15,26 +15,31 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         //Used one of them or both of them
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
     }
 
+    /*//BACK BUTTON ALSO ADD WITHOUT WRITTING BELOW CODE.JUST COMMENT IT AND UNCOMMENT onCreate() part.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater=getMenuInflater();
         menuInflater.inflate(R.menu.secmenu,menu);
 
+        //This is neccessary to write in onCreateOptionsMenu() else not shown back button Symbol.
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         return super.onCreateOptionsMenu(menu);
     }
 
-    /*Imprtant Note:
+    *//*Imprtant Note:
      Do change in Manifest file are as follow:-
 
       <activity android:name=".SecondActivity"  android:parentActivityName=".MainActivity">
         </activity>
 
-        If you not did changes in Manifest file back button will not appear on 'activity_xml' */
+        If you not did changes in Manifest file back button will not appear on 'activity_xml' *//*
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -44,13 +49,13 @@ public class SecondActivity extends AppCompatActivity {
                 this.finish();          //It will finish activity through which it call and return back to Original Activity again i.e. here 'MainActivity.java'
                 break;
 
-            case R.id.home:             //In R.id.home 'home' is already
+            case R.id.back_id:             //In R.id.home 'home' is already
                onBackPressed();         //It will again call same activity through which 'SecondActivity' is called.
                 break;
 
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
 }

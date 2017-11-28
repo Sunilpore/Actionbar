@@ -31,19 +31,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ActionBar ab=getSupportActionBar();
-        ab.setLogo(R.drawable.dc_comics);
-        ab.setDisplayUseLogoEnabled(true);     //This method will enable your logo
-        ab.setDisplayShowHomeEnabled(true);    //This method will enable your home
-
-
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater=getMenuInflater();
         menuInflater.inflate(R.menu.menu_activity,menu);
+
+        ActionBar ab=getSupportActionBar();
+        ab.setLogo(R.drawable.dc_comics);
+        ab.setDisplayUseLogoEnabled(true);     //This method will enable your logo
+
 
         return super.onCreateOptionsMenu(menu);
     }
